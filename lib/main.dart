@@ -20,74 +20,30 @@ class _XylophoneState extends State<Xylophone> {
     player.play('note$a.wav');
   }
 
+  Expanded render(mus, col) {
+    return Expanded(
+      child: FlatButton(
+        onPressed: () {
+          play(mus);
+        },
+        color: col,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(
-          child: FlatButton(
-            onPressed: () {
-              play(1);
-            },
-            color: Colors.deepPurple,
-            // height: 100,
-          ),
-        ),
-        Expanded(
-          child: FlatButton(
-            onPressed: () {
-              play(2);
-            },
-            color: Colors.indigo,
-          ),
-        ),
-        Expanded(
-          child: FlatButton(
-            onPressed: () {
-              play(3);
-            },
-            color: Colors.blue,
-            // height: 100,
-          ),
-        ),
-        Expanded(
-          child: FlatButton(
-            onPressed: () {
-              play(4);
-            },
-            color: Colors.green,
-            // height: 100,
-          ),
-        ),
-        Expanded(
-          child: FlatButton(
-            onPressed: () {
-              play(5);
-            },
-            color: Colors.yellow,
-            // height: 100,
-          ),
-        ),
-        Expanded(
-          child: FlatButton(
-            onPressed: () {
-              play(6);
-            },
-            color: Colors.orange,
-            // height: 100,
-          ),
-        ),
-        Expanded(
-          child: FlatButton(
-            onPressed: () {
-              play(7);
-            },
-            color: Colors.red,
-            // height: 100,
-          ),
-        ),
+        render(1, Colors.deepPurple),
+        render(2, Colors.indigo),
+        render(3, Colors.blue),
+        render(4, Colors.green),
+        render(5, Colors.yellow),
+        render(6, Colors.orange),
+        render(7, Colors.red),
       ],
     );
   }
